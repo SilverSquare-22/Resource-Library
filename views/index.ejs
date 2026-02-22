@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resource Library</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<nav>
+    <h1>📚 Resource Library</h1>
+    <div>
+        <% if (user) { %>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/logout">Logout</a>
+        <% } else { %>
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+        <% } %>
+    </div>
+</nav>
+
+<section class="hero">
+    <h2>Explore Premium Resources</h2>
+    <p>Books, Articles & Knowledge Vault</p>
+</section>
+
+<section class="cards">
+    <% resources.forEach(resource => { %>
+        <div class="card">
+            <h3><%= resource.title %></h3>
+            <p><strong>Type:</strong> <%= resource.type %></p>
+            <p><strong>Author:</strong> <%= resource.author %></p>
+        </div>
+    <% }) %>
+</section>
+
+<script src="/script.js"></script>
+</body>
+</html>
